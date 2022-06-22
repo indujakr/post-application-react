@@ -10,8 +10,8 @@ const SnackBarAlert = ({ success, setSuccess }) => {
   return (
     <Snackbar
       open={success[0]}
-      autoHideDuration={4000}
-      onClose={() => setSuccess([false])}
+      autoHideDuration={2000}
+      onClose={() => setSuccess([false,success[1],success[2]])}
     >
       <Alert severity={success[2]} sx={{ width: "100%" }}>
         {success[1]}

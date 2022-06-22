@@ -4,10 +4,16 @@ import { useRef, useState } from "react";
 import axios from "axios";
 import SnackBarAlert from "../../Common/SnackBarAlert";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     width: "50%",
     height: "45%",
+    [theme.breakpoints.down(400)]:{
+      height : '60%'
+    },
+    [theme.breakpoints.down(300)]:{
+      height : '70%'
+    },
     background: "white",
     position: "absolute",
     top: 0,
@@ -122,7 +128,7 @@ const AddPost = ({ add, setAdd }) => {
             <Button
               variant="contained"
               color="primary"
-              style={{ marginRight: 20 }}
+              style={{ marginRight: 20 , marginBottom : 10 }}
               onClick={() => saveHandler()}
             >
               SAVE
@@ -130,6 +136,7 @@ const AddPost = ({ add, setAdd }) => {
             <Button
               variant="outlined"
               color="primary"
+              style={{  marginBottom : 10 }}
               onClick={() => onCloseHandler()}
             >
               CANCEL
